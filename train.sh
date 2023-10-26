@@ -5,14 +5,14 @@ pip install flash-attn --nobuild-ioslation
 pip3 install -e ".[model_worker,webui]"
 
 python FastChat/fastchat/train/train_lora_llama2.py \
-  --model_name_or_path Nousresearch/Llama-2-13b-hf \
+  --model_name_or_path Nousresearch/Llama-2-70b-hf \
   --lora_r 8 \
   --lora_alpha 16 \
   --lora_dropout 0.05 \
   --q_lora True \
   --data_path ../data/alpaca-gpt4/alpaca-gpt4-sharegpt.json \
   --bf16 True \
-  --output_dir ../output/fastchat/llama-2-13b-alpaca-gpt4-sharegpt \
+  --output_dir ../output/fastchat/llama-2-70b-alpaca-gpt4-sharegpt \
   --num_train_epochs 3 \
   --per_device_train_batch_size 3 \
   --per_device_eval_batch_size 8 \
